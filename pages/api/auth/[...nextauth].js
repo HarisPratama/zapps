@@ -6,12 +6,12 @@ export default NextAuth({
 	// Configure one or more authentication providers
 	providers: [
 		GoogleProvider({
-			clientId: process.env.google.client_id,
-			clientSecret: process.env.google.client_secret,
+			clientId: process.env.GOOGLE_CLIENT_ID,
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 		}),
 		FacebookProvider({
-			clientId: process.env.facebook.client_id,
-			clientSecret: process.env.facebook.client_secret,
+			clientId: process.env.FACEBOOK_CLIENT_ID,
+			clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
 		}),
 		// ...add more providers here
 	],
