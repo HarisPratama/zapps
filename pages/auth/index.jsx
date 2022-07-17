@@ -100,7 +100,7 @@ const Auth = ({ providers }) => {
 						}
 					</form>
 					<div className='flex justify-center items-center gap-8 mt-4'>
-						{ Object.values(providers).map((provider) => (
+						{ providers && Object.values(providers).map((provider) => (
 							<div key={ provider.name }>
 								<button onClick={ () => signIn(provider.id) }>
 									<Image src={ images[provider?.id] } width={ 30 } height={ 30 } />
