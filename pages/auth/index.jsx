@@ -39,6 +39,8 @@ const Auth = ({ providers }) => {
 	}, [user]);
 
 	useEffect(() => {
+		console.log(data, '<< data');
+		console.log(data?.accessToken, '<< data?.accessToken');
 		const provider = localStorage.getItem('provider');
 
 		if (data?.accessToken && provider) {
