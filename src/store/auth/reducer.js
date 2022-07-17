@@ -27,7 +27,6 @@ export const registerAsync = (data) => async (dispatch) => {
 		});
 
 		const jsonResponse = await sendToApi.json();
-		console.log(jsonResponse, '<< jsonResponse');
 		if (jsonResponse?.message == 'Successfully registered') {
 			localStorage.setItem('authType', 'login');
 		}
@@ -47,7 +46,6 @@ export const loginAsync = (data) => async (dispatch) => {
 		});
 
 		const jsonResponse = await sendToApi.json();
-		console.log(jsonResponse, '<< jsonResponse');
 		if (jsonResponse?.message == 'api.auth.login.success') {
 			localStorage.setItem('user', JSON.stringify(jsonResponse.data.user));
 			dispatch(setUser(jsonResponse.data.user));
@@ -71,7 +69,6 @@ export const registerOauthAsync = (data) => async (dispatch) => {
 		});
 
 		const jsonResponse = await sendToApi.json();
-		console.log(jsonResponse, '<< jsonResponse 2');
 		if (jsonResponse?.message == 'Successfully registered') {
 			localStorage.setItem('authType', 'login');
 		}
@@ -92,7 +89,6 @@ export const loginOauthAsync = (data) => async (dispatch) => {
 		});
 
 		const jsonResponse = await sendToApi.json();
-		console.log(jsonResponse, '<< jsonResponse 3');
 		if (jsonResponse?.message == 'api.auth.oauth.success') {
 			dispatch(setUser(jsonResponse.data.user));
 			localStorage.setItem('token', JSON.stringify(jsonResponse.data.token));
